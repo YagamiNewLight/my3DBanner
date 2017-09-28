@@ -30,6 +30,7 @@
         align-items:center;
         border-radius:5px;
         height:500px;
+        transition:transform 0.2s;
     }
 </style>
 <body>
@@ -45,7 +46,10 @@
         var Y = e.pageY;
         var x = X - parent.getBoundingClientRect().width/2-parent.getBoundingClientRect().left;
         var y = Y - parent.getBoundingClientRect().height/2-parent.getBoundingClientRect().top;
-        myBanner.style.transform = 'rotateX('+(-y/20)+'deg)'+''+'rotateY('+(x/20)+'deg)';
+        myBanner.style.transform = 'rotateX('+(-y/40)+'deg)'+''+'rotateY('+(x/40)+'deg)';
+    });
+    parent.addEventListener('mouseout',function(e) {
+        myBanner.style.transform = 'rotateX(0)'+''+'rotateY(0)';
     });
 </script>
 </body>
